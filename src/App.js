@@ -7,6 +7,7 @@ import { CircularProgress } from '@material-ui/core';
 import moment from 'moment';
 
 function App() {
+    
 
     const [token, setToken] = useState();
     const [intensiveCourses, setIntensiveCourses] = useState([]);
