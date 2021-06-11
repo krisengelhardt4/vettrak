@@ -30,7 +30,7 @@ function App() {
 
 
     function APILoginRequest(){
-        axios.post('https://sthservices.ozsoft.com.au/SIU_API/VT_API.asmx?wsdl',
+        axios.post('https://cors-anywhere.herokuapp.com/https://sthservices.ozsoft.com.au/SIU_API/VT_API.asmx?wsdl',
         AuthenticateLogin,
         { 
             headers:{ 
@@ -48,7 +48,7 @@ function App() {
     }
 
     const getAPIToken = async () => {
-      const result = await axios.post('https://sthservices.ozsoft.com.au/SIU_API/VT_API.asmx?wsdl',
+      const result = await axios.post('https://cors-anywhere.herokuapp.com/https://sthservices.ozsoft.com.au/SIU_API/VT_API.asmx?wsdl',
       AuthenticateLogin,
       { 
           headers:{ 
@@ -81,7 +81,7 @@ function App() {
     }
 
     async function GetTimetableData(xmlsChosen){
-      await axios.post('https://sthservices.ozsoft.com.au/SIU_API/VT_API.asmx?wsdl',
+      await axios.post('https://cors-anywhere.herokuapp.com/https://sthservices.ozsoft.com.au/SIU_API/VT_API.asmx?wsdl',
       xmlsChosen,
       { 
           headers:{ 
@@ -199,13 +199,14 @@ function App() {
 
     return(
       <div className="App">
-      {!timetableReady && 
-      <div>       
-          <h1>Serve It Up Timetable Test</h1>
-          <h1>Please wait while the timetable loads</h1>
-      </div>}
-          {!timetableReady && <CircularProgress />}
-          {timetableReady && <ScheduleTest timetableData={timetableData} />}   
+        {!timetableReady && 
+          <div>       
+              <h1>Serve It Up Timetable Test</h1>
+              <h1>Please wait while the timetable loads</h1>
+          </div>
+        }
+        {!timetableReady && <CircularProgress />}
+        {timetableReady && <ScheduleTest timetableData={timetableData} />}   
     </div>
     ) 
 
