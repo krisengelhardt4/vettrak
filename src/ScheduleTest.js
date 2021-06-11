@@ -182,7 +182,7 @@ export default class Demo extends React.PureComponent {
     };
 
     const AppointmentContent = ({ style, ...restProps }) => {
-      console.log(style);
+  
       return (
         
         <Appointments.AppointmentContent {...restProps}>
@@ -242,7 +242,7 @@ export default class Demo extends React.PureComponent {
         
         <Grid container alignItems="center">
           <Grid item xs={2} className={classes.textCenter}>
-          {console.log(children)}
+        
           </Grid>
           <Grid item xs={10}>
             <span></span>
