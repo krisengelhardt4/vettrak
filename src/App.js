@@ -6,6 +6,8 @@ import ScheduleTest from './ScheduleTest';
 import { CircularProgress } from '@material-ui/core';
 import moment from 'moment';
 
+const corsUrl="https://corsanywhere.herokuapp.com/";
+
 function App() {
 
     const [token, setToken] = useState();
@@ -30,7 +32,7 @@ function App() {
 
 
     function APILoginRequest(){
-        axios.post('https://cors-anywhere.herokuapp.com/https://sthservices.ozsoft.com.au/SIU_API/VT_API.asmx?wsdl',
+        axios.post(corsUrl+'https://sthservices.ozsoft.com.au/SIU_API/VT_API.asmx?wsdl',
         AuthenticateLogin,
         { 
             headers:{ 
@@ -48,7 +50,7 @@ function App() {
     }
 
     const getAPIToken = async () => {
-      const result = await axios.post('https://cors-anywhere.herokuapp.com/https://sthservices.ozsoft.com.au/SIU_API/VT_API.asmx?wsdl',
+      const result = await axios.post(corsUrl+'https://sthservices.ozsoft.com.au/SIU_API/VT_API.asmx?wsdl',
       AuthenticateLogin,
       { 
           headers:{ 
@@ -81,7 +83,7 @@ function App() {
     }
 
     async function GetTimetableData(xmlsChosen){
-      await axios.post('https://cors-anywhere.herokuapp.com/https://sthservices.ozsoft.com.au/SIU_API/VT_API.asmx?wsdl',
+      await axios.post(corsUrl+'https://sthservices.ozsoft.com.au/SIU_API/VT_API.asmx?wsdl',
       xmlsChosen,
       { 
           headers:{ 
